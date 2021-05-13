@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data;
 
-namespace kursologV2
+namespace SmallBankApp
 {
     public class DGVDataSourceChanger
     {

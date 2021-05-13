@@ -12,3 +12,4 @@ C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.pdb
 C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\bin\Debug\SmallBank.mdb
 C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.LoginForm.resources
 C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.csprojAssemblyReference.cache
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.DCFizFaces.resources

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kursologV2
+namespace SmallBankApp
 {
     public interface ICRUDForm
     {

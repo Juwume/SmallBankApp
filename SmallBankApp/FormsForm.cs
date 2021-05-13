@@ -26,7 +26,8 @@ namespace SmallBankApp
 
         private void DepFizButton_Click(object sender, EventArgs e)
         {
-            
+            DCFizFaces form = new DCFizFaces();
+            form.Show();
             this.Close();
         }
     }

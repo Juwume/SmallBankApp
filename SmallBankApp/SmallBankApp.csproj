@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCFizFaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCFizFaces.Designer.cs">
+      <DependentUpon>DCFizFaces.cs</DependentUpon>
+    </Compile>
     <Compile Include="DGVDataSourceChanger.cs" />
     <Compile Include="FormsForm.cs">
       <SubType>Form</SubType>
@@ -85,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SmallBankDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DCFizFaces.resx">
+      <DependentUpon>DCFizFaces.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsForm.resx">
       <DependentUpon>FormsForm.cs</DependentUpon>
     </EmbeddedResource>

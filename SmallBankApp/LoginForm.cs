@@ -24,7 +24,7 @@ namespace SmallBankApp
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "suetaDataSet.Users". При необходимости она может быть перемещена или удалена.
+            
             this.groupsTableAdapter1.Fill(this.smallBankDataSet1.Groups);
             //this.UserComboBox.Items.Add(groupsTableAdapter1.GetData()[0].Group.ToString());
             //this.UserComboBox.Items.Add(groupsTableAdapter1.GetData()[1].Group.ToString());
