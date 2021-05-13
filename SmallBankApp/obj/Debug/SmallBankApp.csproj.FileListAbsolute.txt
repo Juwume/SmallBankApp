@@ -1,0 +1,12 @@
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.csprojAssemblyReference.cache
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.FormsForm.resources
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.InfoForm.resources
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.MainForm.resources
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.Properties.Resources.resources
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.csproj.GenerateResource.cache
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.csproj.CoreCompileInputs.cache
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\bin\Debug\SmallBankApp.exe.config
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\bin\Debug\SmallBankApp.exe
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\bin\Debug\SmallBankApp.pdb
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.exe
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.pdb

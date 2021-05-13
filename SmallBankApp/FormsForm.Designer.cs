@@ -1,4 +1,4 @@
-﻿namespace Maket
+﻿namespace SmallBankApp
 {
     partial class FormsForm
     {

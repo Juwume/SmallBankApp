@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Maket
+namespace SmallBankApp
 {
     public partial class FormsForm : Form
     {
@@ -19,15 +19,14 @@ namespace Maket
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            GeneralMenu menu = new GeneralMenu();
+            MainForm menu = new MainForm();
             menu.Show();
             this.Close();
         }
 
         private void DepFizButton_Click(object sender, EventArgs e)
         {
-            DepFizForm depFizForm = new DepFizForm();
-            depFizForm.Show();
+            
             this.Close();
         }
     }

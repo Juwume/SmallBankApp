@@ -1,5 +1,4 @@
-﻿namespace Maket
-{
+﻿namespace SmallBankApp { 
     partial class InfoForm
     {
         /// <summary>

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace SmallBankApp
 {
-    public partial class InfoForm : Form
+    public partial class LoginForm : Form
     {
-        public InfoForm()
+        public LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            MainForm menu = new MainForm();
-            menu.Show();
-            this.Close();
         }
     }
 }
