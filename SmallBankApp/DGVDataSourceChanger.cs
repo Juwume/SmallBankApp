@@ -11,7 +11,7 @@ namespace kursologV2
 {
     public class DGVDataSourceChanger
     {
-        private const string conString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Maxim\\source\\repos\\Labs\\Maket\\Maket\\SmallBank.mdb";
+        private const string conString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=SmallBank.mdb";
         public static DataTable getNewDGVDataSource(string query)
         {
             OleDbConnection connection = new OleDbConnection(conString);
