@@ -14,8 +14,8 @@ namespace SmallBankApp
     {
         public int Id { get; set; }
         public string Surname { get; set; }
-        public DCFizFaces ptr {get;set;}
-
+        public DCFizFaces PtrFiz {get;set;}
+        public DCUrFaces PtrUr { get; set; }
 
 
         public AddDepForm()
@@ -36,22 +36,35 @@ namespace SmallBankApp
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            if (isIncorrectInputs())
+            if (isIncorrectInputs() || (PtrFiz == null && PtrUr == null))
             {
                 MessageBox.Show("Некоректные данные");
             }
             else
             {
+                if (PtrFiz != null)
+                {
 
-                DCFizFaces.DepModel.IdClient = Id;
-                DCFizFaces.DepModel.IdTarif = dicTarifDepTableAdapter.GetData().First(t => t.Name == TarifComboBox.Text).IdTarif;
-                DCFizFaces.DepModel.Sum = Convert.ToDecimal(SumTextBox.Text);
-                DCFizFaces.DepModel.DateStart = StartDateTimePicker.Value;
-                DCFizFaces.DepModel.DateEnd = EndDateTimePicker.Value;
-                ptr.IsReady = true;
-                ptr.IsDep = true;
-                this.Close();
-
+                    DCFizFaces.DepModel.IdClient = Id;
+                    DCFizFaces.DepModel.IdTarif = dicTarifDepTableAdapter.GetData().First(t => t.Name == TarifComboBox.Text).IdTarif;
+                    DCFizFaces.DepModel.Sum = Convert.ToDecimal(SumTextBox.Text);
+                    DCFizFaces.DepModel.DateStart = StartDateTimePicker.Value;
+                    DCFizFaces.DepModel.DateEnd = EndDateTimePicker.Value;
+                    PtrFiz.IsReady = true;
+                    PtrFiz.IsDep = true;
+                    this.Close();
+                }
+                else
+                {
+                    DCUrFaces.DepModel.IdClient = Id;
+                    DCUrFaces.DepModel.IdTarif = dicTarifDepTableAdapter.GetData().First(t => t.Name == TarifComboBox.Text).IdTarif;
+                    DCUrFaces.DepModel.Sum = Convert.ToDecimal(SumTextBox.Text);
+                    DCUrFaces.DepModel.DateStart = StartDateTimePicker.Value;
+                    DCUrFaces.DepModel.DateEnd = EndDateTimePicker.Value;
+                    PtrUr.IsReady = true;
+                    PtrUr.IsDep = true;
+                    this.Close();
+                }
 
             }
         }

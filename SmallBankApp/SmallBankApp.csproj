@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCreditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +70,19 @@
     <Compile Include="DCFizFaces.Designer.cs">
       <DependentUpon>DCFizFaces.cs</DependentUpon>
     </Compile>
+    <Compile Include="DCUrFaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCUrFaces.Designer.cs">
+      <DependentUpon>DCUrFaces.cs</DependentUpon>
+    </Compile>
     <Compile Include="DGVDataSourceChanger.cs" />
+    <Compile Include="FizFaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FizFaces.Designer.cs">
+      <DependentUpon>FizFaces.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SmallBankDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCreditForm.resx">
       <DependentUpon>AddCreditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DCFizFaces.resx">
       <DependentUpon>DCFizFaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCUrFaces.resx">
+      <DependentUpon>DCUrFaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FizFaces.resx">
+      <DependentUpon>FizFaces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsForm.resx">
       <DependentUpon>FormsForm.cs</DependentUpon>

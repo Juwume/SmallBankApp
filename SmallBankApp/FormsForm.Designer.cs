@@ -40,73 +40,83 @@
             // 
             // DepFizButton
             // 
-            this.DepFizButton.Location = new System.Drawing.Point(116, 69);
+            this.DepFizButton.Location = new System.Drawing.Point(87, 56);
+            this.DepFizButton.Margin = new System.Windows.Forms.Padding(2);
             this.DepFizButton.Name = "DepFizButton";
-            this.DepFizButton.Size = new System.Drawing.Size(235, 40);
+            this.DepFizButton.Size = new System.Drawing.Size(176, 35);
             this.DepFizButton.TabIndex = 0;
-            this.DepFizButton.Text = "Вклады Физических лиц";
+            this.DepFizButton.Text = "Вклады и кредиты \r\nФизических лиц";
             this.DepFizButton.UseVisualStyleBackColor = true;
             this.DepFizButton.Click += new System.EventHandler(this.DepFizButton_Click);
             // 
             // DulFizButton
             // 
-            this.DulFizButton.Location = new System.Drawing.Point(116, 138);
+            this.DulFizButton.Location = new System.Drawing.Point(87, 112);
+            this.DulFizButton.Margin = new System.Windows.Forms.Padding(2);
             this.DulFizButton.Name = "DulFizButton";
-            this.DulFizButton.Size = new System.Drawing.Size(235, 43);
+            this.DulFizButton.Size = new System.Drawing.Size(176, 35);
             this.DulFizButton.TabIndex = 1;
             this.DulFizButton.Text = "ДУЛ Физических лиц";
             this.DulFizButton.UseVisualStyleBackColor = true;
             // 
             // CredButton
             // 
-            this.CredButton.Location = new System.Drawing.Point(406, 210);
+            this.CredButton.Location = new System.Drawing.Point(304, 171);
+            this.CredButton.Margin = new System.Windows.Forms.Padding(2);
             this.CredButton.Name = "CredButton";
-            this.CredButton.Size = new System.Drawing.Size(235, 39);
+            this.CredButton.Size = new System.Drawing.Size(176, 32);
             this.CredButton.TabIndex = 2;
             this.CredButton.Text = "Кредиты";
             this.CredButton.UseVisualStyleBackColor = true;
             // 
             // FizButton
             // 
-            this.FizButton.Location = new System.Drawing.Point(312, 288);
+            this.FizButton.Location = new System.Drawing.Point(234, 234);
+            this.FizButton.Margin = new System.Windows.Forms.Padding(2);
             this.FizButton.Name = "FizButton";
-            this.FizButton.Size = new System.Drawing.Size(148, 58);
+            this.FizButton.Size = new System.Drawing.Size(111, 47);
             this.FizButton.TabIndex = 3;
             this.FizButton.Text = "Физические лица";
             this.FizButton.UseVisualStyleBackColor = true;
+            this.FizButton.Click += new System.EventHandler(this.FizButton_Click);
             // 
             // DulUrButton
             // 
-            this.DulUrButton.Location = new System.Drawing.Point(406, 138);
+            this.DulUrButton.Location = new System.Drawing.Point(304, 112);
+            this.DulUrButton.Margin = new System.Windows.Forms.Padding(2);
             this.DulUrButton.Name = "DulUrButton";
-            this.DulUrButton.Size = new System.Drawing.Size(235, 50);
+            this.DulUrButton.Size = new System.Drawing.Size(176, 41);
             this.DulUrButton.TabIndex = 4;
             this.DulUrButton.Text = "ДУЛ Юридических лиц";
             this.DulUrButton.UseVisualStyleBackColor = true;
             // 
             // DepUrButton
             // 
-            this.DepUrButton.Location = new System.Drawing.Point(406, 69);
+            this.DepUrButton.Location = new System.Drawing.Point(304, 56);
+            this.DepUrButton.Margin = new System.Windows.Forms.Padding(2);
             this.DepUrButton.Name = "DepUrButton";
-            this.DepUrButton.Size = new System.Drawing.Size(235, 43);
+            this.DepUrButton.Size = new System.Drawing.Size(176, 35);
             this.DepUrButton.TabIndex = 5;
-            this.DepUrButton.Text = "Вклады Юридических лиц";
+            this.DepUrButton.Text = "Вклады и кредиты \r\nЮридических лиц";
             this.DepUrButton.UseVisualStyleBackColor = true;
+            this.DepUrButton.Click += new System.EventHandler(this.DepUrButton_Click);
             // 
             // DepButton
             // 
-            this.DepButton.Location = new System.Drawing.Point(116, 210);
+            this.DepButton.Location = new System.Drawing.Point(87, 171);
+            this.DepButton.Margin = new System.Windows.Forms.Padding(2);
             this.DepButton.Name = "DepButton";
-            this.DepButton.Size = new System.Drawing.Size(235, 39);
+            this.DepButton.Size = new System.Drawing.Size(176, 32);
             this.DepButton.TabIndex = 6;
             this.DepButton.Text = "Вклады";
             this.DepButton.UseVisualStyleBackColor = true;
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(312, 373);
+            this.BackButton.Location = new System.Drawing.Point(234, 303);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(148, 40);
+            this.BackButton.Size = new System.Drawing.Size(111, 32);
             this.BackButton.TabIndex = 7;
             this.BackButton.Text = "Назад";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -114,9 +124,9 @@
             // 
             // FormsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.DepButton);
             this.Controls.Add(this.DepUrButton);
@@ -125,6 +135,7 @@
             this.Controls.Add(this.CredButton);
             this.Controls.Add(this.DulFizButton);
             this.Controls.Add(this.DepFizButton);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormsForm";
             this.Text = "FormsForm";
             this.ResumeLayout(false);

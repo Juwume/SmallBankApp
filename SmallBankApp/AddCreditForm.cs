@@ -15,7 +15,8 @@ namespace SmallBankApp
         
         public int Id { get; set; }
         public string Surname { get; set; }
-        public DCFizFaces ptr { get; set; }
+        public DCFizFaces PtrFiz { get; set; }
+        public DCUrFaces PtrUr { get; set; }
 
 
 
@@ -32,17 +33,17 @@ namespace SmallBankApp
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "smallBankDataSet.DicTarifCred". При необходимости она может быть перемещена или удалена.
             this.dicTarifCredTableAdapter.Fill(this.smallBankDataSet.DicTarifCred);
-           
             SurTextBox.Text = Surname;
+
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            if (isIncorrectInputs())
+            if (isIncorrectInputs() || (PtrFiz == null && PtrUr == null))
             {
                 MessageBox.Show("Некоректные данные");
             }
-            else
+            else if (PtrFiz != null)
             {
                 
                 DCFizFaces.CreditModel.IdClient = Id;
@@ -51,11 +52,23 @@ namespace SmallBankApp
                 DCFizFaces.CreditModel.Rest = Convert.ToDecimal(RestTextBox.Text);
                 DCFizFaces.CreditModel.DateStart = StartDateTimePicker.Value;
                 DCFizFaces.CreditModel.DateEnd = EndDateTimePicker.Value;
-                ptr.IsReady = true;
-                ptr.IsDep = false;
+                PtrFiz.IsReady = true;
+                PtrFiz.IsDep = false;
                 this.Close();
 
 
+            }
+            else
+            {
+                DCUrFaces.CreditModel.IdClient = Id;
+                DCUrFaces.CreditModel.IdTarif = dicTarifCredTableAdapter.GetData().First(t => t.Name == TarifComboBox.Text).IdTarif;
+                DCUrFaces.CreditModel.Sum = Convert.ToDecimal(SumTextBox.Text);
+                DCUrFaces.CreditModel.Rest = Convert.ToDecimal(RestTextBox.Text);
+                DCUrFaces.CreditModel.DateStart = StartDateTimePicker.Value;
+                DCUrFaces.CreditModel.DateEnd = EndDateTimePicker.Value;
+                PtrUr.IsReady = true;
+                PtrUr.IsDep = false;
+                this.Close();
             }
         }
 

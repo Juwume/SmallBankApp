@@ -69,6 +69,8 @@
             this.AddCredButton = new System.Windows.Forms.Button();
             this.DelDepButton = new System.Windows.Forms.Button();
             this.DelCredButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DepGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depositsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
@@ -145,7 +147,7 @@
             this.DepGridView.DataSource = this.depositsBindingSource;
             this.DepGridView.Location = new System.Drawing.Point(75, 263);
             this.DepGridView.Name = "DepGridView";
-            this.DepGridView.Size = new System.Drawing.Size(754, 150);
+            this.DepGridView.Size = new System.Drawing.Size(754, 144);
             this.DepGridView.TabIndex = 6;
             this.DepGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DepGridView_RowHeaderMouseClick);
             // 
@@ -285,7 +287,7 @@
             this.ClientsGridView.DataSource = this.fizFacesBindingSource;
             this.ClientsGridView.Location = new System.Drawing.Point(75, 34);
             this.ClientsGridView.Name = "ClientsGridView";
-            this.ClientsGridView.Size = new System.Drawing.Size(450, 207);
+            this.ClientsGridView.Size = new System.Drawing.Size(450, 203);
             this.ClientsGridView.TabIndex = 8;
             this.ClientsGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ClientsGridView_RowHeaderMouseClick);
             // 
@@ -395,11 +397,33 @@
             this.DelCredButton.UseVisualStyleBackColor = true;
             this.DelCredButton.Click += new System.EventHandler(this.DelCredButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(71, 410);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Кредиты";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(71, 240);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Вклады";
+            // 
             // DCFizFaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 604);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.DelCredButton);
             this.Controls.Add(this.DelDepButton);
             this.Controls.Add(this.AddCredButton);
@@ -474,5 +498,7 @@
         private System.Windows.Forms.Button AddCredButton;
         private System.Windows.Forms.Button DelDepButton;
         private System.Windows.Forms.Button DelCredButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

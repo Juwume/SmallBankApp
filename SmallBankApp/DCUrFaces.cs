@@ -10,21 +10,32 @@ using System.Windows.Forms;
 
 namespace SmallBankApp
 {
-    public partial class DCFizFaces : Form, ICRUDForm
+    public partial class DCUrFaces : Form, ICRUDForm
     {
+        public DCUrFaces()
+        {
+            InitializeComponent();
+        }
+
+        private void DCUrFaces_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "smallBankDataSet.Credits". При необходимости она может быть перемещена или удалена.
+            
+            this.urFacesTableAdapter.Fill(this.smallBankDataSet.UrFaces);
+        }
         private static class ClientModel
         {
             public static int id { get; set; }
             public static string Name { get; set; }
-            public static string Surname { get; set; }
-            public static string Patronymic { get; set; }
+            public static string ShortName { get; set; }
+            
 
             public static void reset()
             {
                 id = -1;
                 Name = "";
-                Surname = "";
-                Patronymic = "";
+                ShortName = "";
+                
             }
         }
 
@@ -41,7 +52,7 @@ namespace SmallBankApp
             public static DateTime DateEnd { get; set; }
             public static int IdTarif { get; set; }
 
-            
+
             public static void Reset()
             {
                 IdClient = -1;
@@ -60,8 +71,8 @@ namespace SmallBankApp
             public static DateTime DateStart { get; set; }
             public static DateTime DateEnd { get; set; }
             public static int IdTarif { get; set; }
-            
-            
+
+
             public static void Reset()
             {
                 IdClient = -1;
@@ -70,27 +81,6 @@ namespace SmallBankApp
                 DateEnd = DateTime.Now;
                 IdTarif = -1;
             }
-        }
-
-
-        public DCFizFaces()
-        {
-            InitializeComponent();
-            CreditModel.Reset();
-            DepModel.Reset();
-            ClientModel.reset();
-
-        }
-
-        private void DCFizFaces_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "smallBankDataSet.FizFaces". При необходимости она может быть перемещена или удалена.
-            this.fizFacesTableAdapter.Fill(this.smallBankDataSet.FizFaces);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "smallBankDataSet.Credits". При необходимости она может быть перемещена или удалена.
-            //this.creditsTableAdapter.Fill(this.smallBankDataSet.Credits);
-            //// TODO: данная строка кода позволяет загрузить данные в таблицу "smallBankDataSet.Deposits". При необходимости она может быть перемещена или удалена.
-            //this.depositsTableAdapter.Fill(this.smallBankDataSet.Deposits);
-
         }
 
         public void updateView()
@@ -106,51 +96,52 @@ namespace SmallBankApp
 
         public void insertRow()
         {
-            
+
         }
 
         public void deleteRow()
         {
-            
+
         }
 
         public void updateRow()
         {
-            
+
         }
 
         public void updateInputs()
         {
             NameTextBox.Text = ClientModel.Name;
-            SurTextBox.Text = ClientModel.Surname;
-            PatTextBox.Text = ClientModel.Patronymic;
-                
+            ShortNameTextBox.Text = ClientModel.ShortName;
+            
+
         }
 
         public void clearInputs()
         {
             NameTextBox.Text = "";
-            SurTextBox.Text = "";
-            PatTextBox.Text = "";
+            ShortNameTextBox.Text = "";
+            
         }
 
         public bool isIncorrectModel()
         {
-            return ClientModel.id < 0 || ClientModel.Name == "" || ClientModel.Surname == "" || ClientModel.Patronymic == "";
+            return ClientModel.id < 0 || ClientModel.Name == "" || ClientModel.ShortName == "";
         }
 
         public bool isIncorrectInputs()
         {
-            return NameTextBox.Text == "" || SurTextBox.Text == "" || PatTextBox.Text == "";
+            return NameTextBox.Text == "" || ShortNameTextBox.Text == "" ;
         }
 
 
         private void ClientsGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ClientModel.id = Convert.ToInt32(ClientsGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-            ClientModel.Surname = ClientsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            ClientModel.Name = ClientsGridView.Rows[e.RowIndex].Cells[2].Value.ToString();      
-            ClientModel.Patronymic = ClientsGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            ClientModel.Name = ClientsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            ClientModel.ShortName = ClientsGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            
+          
 
             string query = "SELECT * FROM Deposits WHERE IdClient = " + ClientModel.id;
             DepGridView.DataSource = DGVDataSourceChanger.getNewDGVDataSource(query);
@@ -163,8 +154,8 @@ namespace SmallBankApp
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void AddDepButton_Click(object sender, EventArgs e)
@@ -177,15 +168,15 @@ namespace SmallBankApp
             {
                 AddDepForm addDepForm = new AddDepForm();
                 addDepForm.Id = ClientModel.id;
-                addDepForm.Surname = ClientModel.Surname;
-                addDepForm.PtrFiz = this;
+                addDepForm.Surname = ClientModel.ShortName;
+                addDepForm.PtrUr = this;
                 addDepForm.ShowDialog();
             }
 
-            
+
         }
 
- 
+
 
         private void DCFizFaces_Click(object sender, EventArgs e)
         {
@@ -219,7 +210,7 @@ namespace SmallBankApp
                 }
                 else
                 {
-                    
+
                     this.creditsTableAdapter.Fill(this.smallBankDataSet.Credits);
                     creditsTableAdapter.Insert(CreditModel.IdClient, CreditModel.Sum, CreditModel.Rest, CreditModel.DateStart.Date, CreditModel.DateEnd.Date, CreditModel.IdTarif);
                     string query = "SELECT * FROM Credits WHERE IdClient = " + ClientModel.id;
@@ -249,19 +240,19 @@ namespace SmallBankApp
                 string query = "SELECT * FROM Deposits WHERE IdClient = " + ClientModel.id;
                 DepGridView.DataSource = DGVDataSourceChanger.getNewDGVDataSource(query);
                 updateView();
-            }    
-               
+            }
+
         }
 
         private void DepGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DepModel.IdDep =  Convert.ToInt32(DepGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            DepModel.IdDep = Convert.ToInt32(DepGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             DepModel.IdClient = Convert.ToInt32(DepGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
             DepModel.Sum = Convert.ToDecimal(DepGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
             DepModel.DateStart = Convert.ToDateTime(DepGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
             DepModel.DateEnd = Convert.ToDateTime(DepGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
             DepModel.IdTarif = Convert.ToInt32(DepGridView.Rows[e.RowIndex].Cells[5].Value.ToString());
-            
+
         }
 
         private void AddCredButton_Click(object sender, EventArgs e)
@@ -274,8 +265,8 @@ namespace SmallBankApp
             {
                 AddCreditForm addCredForm = new AddCreditForm();
                 addCredForm.Id = ClientModel.id;
-                addCredForm.Surname = ClientModel.Surname;
-                addCredForm.PtrFiz = this;
+                addCredForm.Surname = ClientModel.ShortName;
+                addCredForm.PtrUr = this;
                 addCredForm.ShowDialog();
             }
         }
@@ -303,6 +294,7 @@ namespace SmallBankApp
                 CredGridView.DataSource = DGVDataSourceChanger.getNewDGVDataSource(query);
                 updateView();
             }
-            }
+        }
     }
 }
+

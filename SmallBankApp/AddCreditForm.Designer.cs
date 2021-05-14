@@ -32,22 +32,22 @@
             this.SumTextBox = new System.Windows.Forms.MaskedTextBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SurTextBox = new System.Windows.Forms.TextBox();
             this.TarifComboBox = new System.Windows.Forms.ComboBox();
+            this.dicTarifCredBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.smallBankDataSet = new SmallBankApp.SmallBankDataSet();
             this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.RestTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.smallBankDataSet = new SmallBankApp.SmallBankDataSet();
-            this.dicTarifCredBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dicTarifCredTableAdapter = new SmallBankApp.SmallBankDataSetTableAdapters.DicTarifCredTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SurTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dicTarifCredBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // SumTextBox
@@ -80,16 +80,6 @@
             this.CancelButton.Text = "Закрыть";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(47, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 24);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Фамилия";
             // 
             // label5
             // 
@@ -131,15 +121,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Тариф";
             // 
-            // SurTextBox
-            // 
-            this.SurTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SurTextBox.Location = new System.Drawing.Point(241, 29);
-            this.SurTextBox.Name = "SurTextBox";
-            this.SurTextBox.ReadOnly = true;
-            this.SurTextBox.Size = new System.Drawing.Size(203, 26);
-            this.SurTextBox.TabIndex = 18;
-            // 
             // TarifComboBox
             // 
             this.TarifComboBox.DataSource = this.dicTarifCredBindingSource;
@@ -151,6 +132,16 @@
             this.TarifComboBox.Size = new System.Drawing.Size(203, 28);
             this.TarifComboBox.TabIndex = 17;
             this.TarifComboBox.ValueMember = "Name";
+            // 
+            // dicTarifCredBindingSource
+            // 
+            this.dicTarifCredBindingSource.DataMember = "DicTarifCred";
+            this.dicTarifCredBindingSource.DataSource = this.smallBankDataSet;
+            // 
+            // smallBankDataSet
+            // 
+            this.smallBankDataSet.DataSetName = "SmallBankDataSet";
+            this.smallBankDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EndDateTimePicker
             // 
@@ -187,44 +178,53 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Остаток";
             // 
-            // smallBankDataSet
-            // 
-            this.smallBankDataSet.DataSetName = "SmallBankDataSet";
-            this.smallBankDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dicTarifCredBindingSource
-            // 
-            this.dicTarifCredBindingSource.DataMember = "DicTarifCred";
-            this.dicTarifCredBindingSource.DataSource = this.smallBankDataSet;
-            // 
             // dicTarifCredTableAdapter
             // 
             this.dicTarifCredTableAdapter.ClearBeforeFill = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(47, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 24);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Наименование";
+            // 
+            // SurTextBox
+            // 
+            this.SurTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SurTextBox.Location = new System.Drawing.Point(241, 25);
+            this.SurTextBox.Name = "SurTextBox";
+            this.SurTextBox.ReadOnly = true;
+            this.SurTextBox.Size = new System.Drawing.Size(203, 26);
+            this.SurTextBox.TabIndex = 29;
             // 
             // AddCreditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 342);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.SurTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.RestTextBox);
             this.Controls.Add(this.SumTextBox);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SurTextBox);
             this.Controls.Add(this.TarifComboBox);
             this.Controls.Add(this.EndDateTimePicker);
             this.Controls.Add(this.StartDateTimePicker);
             this.Name = "AddCreditForm";
             this.Text = "AddCreditForm";
             this.Load += new System.EventHandler(this.AddCreditForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dicTarifCredBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,12 +235,10 @@
         private System.Windows.Forms.MaskedTextBox SumTextBox;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SurTextBox;
         private System.Windows.Forms.ComboBox TarifComboBox;
         private System.Windows.Forms.DateTimePicker EndDateTimePicker;
         private System.Windows.Forms.DateTimePicker StartDateTimePicker;
@@ -249,5 +247,7 @@
         private SmallBankDataSet smallBankDataSet;
         private System.Windows.Forms.BindingSource dicTarifCredBindingSource;
         private SmallBankDataSetTableAdapters.DicTarifCredTableAdapter dicTarifCredTableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox SurTextBox;
     }
 }

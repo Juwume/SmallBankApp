@@ -31,5 +31,19 @@ namespace SmallBankApp
             form.Show();
             this.Close();
         }
+
+        private void DepUrButton_Click(object sender, EventArgs e)
+        {
+            DCUrFaces form = new DCUrFaces();
+            form.Show();
+            this.Close();
+        }
+
+        private void FizButton_Click(object sender, EventArgs e)
+        {
+            FizFaces form = new FizFaces();
+            form.Show();
+            this.Close();
+        }
     }
 }
