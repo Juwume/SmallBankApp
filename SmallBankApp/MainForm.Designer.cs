@@ -44,6 +44,7 @@
             this.ExitButton.TabIndex = 19;
             this.ExitButton.Text = "Выход";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // InfoButton
             // 

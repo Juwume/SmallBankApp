@@ -12,6 +12,7 @@ namespace SmallBankApp
 {
     public partial class MainForm : Form
     {
+        public bool IsLogin = false;
         public MainForm()
         {
             InitializeComponent();
@@ -40,26 +41,36 @@ namespace SmallBankApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm f = new LoginForm();
-            f.ShowDialog(this);
-            if (f.isLoggedIn)
+            if (!IsLogin)
             {
-                if (f.isAdmin)
+                this.Hide();
+                LoginForm f = new LoginForm();
+                f.ShowDialog(this);
+                if (f.isLoggedIn)
                 {
-                    Show();
+                    if (f.isAdmin)
+                    {
+                        IsLogin = true;
+                        this.Show();
+                    }
+                    else
+                    {
+                        IsLogin = true;
+                        ReportsForm reports = new ReportsForm();
+                        reports.ShowDialog(this);
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    ReportsForm reports = new ReportsForm();
-                    reports.ShowDialog(this);
                     Close();
                 }
             }
-            else
-            {
-                Close();
-            }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

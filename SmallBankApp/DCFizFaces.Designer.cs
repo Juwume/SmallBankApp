@@ -56,14 +56,19 @@
             this.creditsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.creditsTableAdapter = new SmallBankApp.SmallBankDataSetTableAdapters.CreditsTableAdapter();
             this.ClientsGridView = new System.Windows.Forms.DataGridView();
-            this.fizFacesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fizFacesTableAdapter = new SmallBankApp.SmallBankDataSetTableAdapters.FizFacesTableAdapter();
             this.idClientDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patronymicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fizFacesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fizFacesTableAdapter = new SmallBankApp.SmallBankDataSetTableAdapters.FizFacesTableAdapter();
+            this.AddDepButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.AddCredButton = new System.Windows.Forms.Button();
+            this.DelDepButton = new System.Windows.Forms.Button();
+            this.DelCredButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DepGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depositsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
@@ -126,6 +131,8 @@
             // 
             // DepGridView
             // 
+            this.DepGridView.AllowUserToAddRows = false;
+            this.DepGridView.AllowUserToDeleteRows = false;
             this.DepGridView.AutoGenerateColumns = false;
             this.DepGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DepGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -140,6 +147,7 @@
             this.DepGridView.Name = "DepGridView";
             this.DepGridView.Size = new System.Drawing.Size(754, 150);
             this.DepGridView.TabIndex = 6;
+            this.DepGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DepGridView_RowHeaderMouseClick);
             // 
             // idDepDataGridViewTextBoxColumn
             // 
@@ -193,6 +201,8 @@
             // 
             // CredGridView
             // 
+            this.CredGridView.AllowUserToAddRows = false;
+            this.CredGridView.AllowUserToDeleteRows = false;
             this.CredGridView.AutoGenerateColumns = false;
             this.CredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CredGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -208,6 +218,7 @@
             this.CredGridView.Name = "CredGridView";
             this.CredGridView.Size = new System.Drawing.Size(754, 150);
             this.CredGridView.TabIndex = 7;
+            this.CredGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CredGridView_RowHeaderMouseClick);
             // 
             // idCredDataGridViewTextBoxColumn
             // 
@@ -278,15 +289,6 @@
             this.ClientsGridView.TabIndex = 8;
             this.ClientsGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ClientsGridView_RowHeaderMouseClick);
             // 
-            // fizFacesBindingSource
-            // 
-            this.fizFacesBindingSource.DataMember = "FizFaces";
-            this.fizFacesBindingSource.DataSource = this.smallBankDataSet;
-            // 
-            // fizFacesTableAdapter
-            // 
-            this.fizFacesTableAdapter.ClearBeforeFill = true;
-            // 
             // idClientDataGridViewTextBoxColumn2
             // 
             this.idClientDataGridViewTextBoxColumn2.DataPropertyName = "IdClient";
@@ -329,11 +331,80 @@
             this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
             this.adressDataGridViewTextBoxColumn.Visible = false;
             // 
+            // fizFacesBindingSource
+            // 
+            this.fizFacesBindingSource.DataMember = "FizFaces";
+            this.fizFacesBindingSource.DataSource = this.smallBankDataSet;
+            // 
+            // fizFacesTableAdapter
+            // 
+            this.fizFacesTableAdapter.ClearBeforeFill = true;
+            // 
+            // AddDepButton
+            // 
+            this.AddDepButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddDepButton.Location = new System.Drawing.Point(835, 263);
+            this.AddDepButton.Name = "AddDepButton";
+            this.AddDepButton.Size = new System.Drawing.Size(82, 47);
+            this.AddDepButton.TabIndex = 10;
+            this.AddDepButton.Text = "Добавить";
+            this.AddDepButton.UseVisualStyleBackColor = true;
+            this.AddDepButton.Click += new System.EventHandler(this.AddDepButton_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExitButton.Location = new System.Drawing.Point(670, 199);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(159, 42);
+            this.ExitButton.TabIndex = 11;
+            this.ExitButton.Text = "Выйти";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // AddCredButton
+            // 
+            this.AddCredButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddCredButton.Location = new System.Drawing.Point(835, 433);
+            this.AddCredButton.Name = "AddCredButton";
+            this.AddCredButton.Size = new System.Drawing.Size(82, 47);
+            this.AddCredButton.TabIndex = 12;
+            this.AddCredButton.Text = "Добавить";
+            this.AddCredButton.UseVisualStyleBackColor = true;
+            this.AddCredButton.Click += new System.EventHandler(this.AddCredButton_Click);
+            // 
+            // DelDepButton
+            // 
+            this.DelDepButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DelDepButton.Location = new System.Drawing.Point(835, 316);
+            this.DelDepButton.Name = "DelDepButton";
+            this.DelDepButton.Size = new System.Drawing.Size(82, 47);
+            this.DelDepButton.TabIndex = 13;
+            this.DelDepButton.Text = "Удалить";
+            this.DelDepButton.UseVisualStyleBackColor = true;
+            this.DelDepButton.Click += new System.EventHandler(this.DelDepButton_Click);
+            // 
+            // DelCredButton
+            // 
+            this.DelCredButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DelCredButton.Location = new System.Drawing.Point(835, 486);
+            this.DelCredButton.Name = "DelCredButton";
+            this.DelCredButton.Size = new System.Drawing.Size(82, 47);
+            this.DelCredButton.TabIndex = 14;
+            this.DelCredButton.Text = "Удалить";
+            this.DelCredButton.UseVisualStyleBackColor = true;
+            this.DelCredButton.Click += new System.EventHandler(this.DelCredButton_Click);
+            // 
             // DCFizFaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 604);
+            this.Controls.Add(this.DelCredButton);
+            this.Controls.Add(this.DelDepButton);
+            this.Controls.Add(this.AddCredButton);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.AddDepButton);
             this.Controls.Add(this.ClientsGridView);
             this.Controls.Add(this.CredGridView);
             this.Controls.Add(this.DepGridView);
@@ -343,9 +414,12 @@
             this.Controls.Add(this.PatTextBox);
             this.Controls.Add(this.SurTextBox);
             this.Controls.Add(this.NameTextBox);
+            this.Location = new System.Drawing.Point(-100, -100);
             this.Name = "DCFizFaces";
             this.Text = "DCFizFaces";
+            this.Activated += new System.EventHandler(this.DCFizFaces_Activated);
             this.Load += new System.EventHandler(this.DCFizFaces_Load);
+            this.Click += new System.EventHandler(this.DCFizFaces_Click);
             ((System.ComponentModel.ISupportInitialize)(this.DepGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depositsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).EndInit();
@@ -395,5 +469,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn patronymicDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button AddDepButton;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button AddCredButton;
+        private System.Windows.Forms.Button DelDepButton;
+        private System.Windows.Forms.Button DelCredButton;
     }
 }

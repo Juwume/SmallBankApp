@@ -20,6 +20,7 @@ namespace SmallBankApp
         private void BackButton_Click(object sender, EventArgs e)
         {
             MainForm menu = new MainForm();
+            menu.IsLogin = true;
             menu.Show();
             this.Close();
         }

@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCreditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCreditForm.Designer.cs">
+      <DependentUpon>AddCreditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepForm.Designer.cs">
+      <DependentUpon>AddDepForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DCFizFaces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SmallBankDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCreditForm.resx">
+      <DependentUpon>AddCreditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDepForm.resx">
+      <DependentUpon>AddDepForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DCFizFaces.resx">
       <DependentUpon>DCFizFaces.cs</DependentUpon>
     </EmbeddedResource>
