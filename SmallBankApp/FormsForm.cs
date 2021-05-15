@@ -45,5 +45,19 @@ namespace SmallBankApp
             form.Show();
             this.Close();
         }
+
+        private void CredButton_Click(object sender, EventArgs e)
+        {
+            CreditsForm form = new CreditsForm();
+            form.Show();
+            this.Close();
+        }
+
+        private void DepButton_Click(object sender, EventArgs e)
+        {
+            DepForm form = new DepForm();
+            form.Show();
+            this.Close();
+        }
     }
 }

@@ -117,6 +117,8 @@ namespace SmallBankApp
             OldClientModel.Patronymic = FizFacesGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             OldClientModel.INN = FizFacesGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
             OldClientModel.Adress = FizFacesGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            OldClientModel.IsResident = clientsTableAdapter1.GetData().FirstOrDefault(t => t.Id == OldClientModel.id).Resident;
+            OldClientModel.idType = clientsTableAdapter1.GetData().FirstOrDefault(t => t.Id == OldClientModel.id).TypeClient;
         }
 
         private void AddDepButton_Click(object sender, EventArgs e)
@@ -169,6 +171,7 @@ namespace SmallBankApp
         {
             
             fizFacesTableAdapter.Delete(OldClientModel.id, OldClientModel.Surname, OldClientModel.Name, OldClientModel.Patronymic, OldClientModel.INN, OldClientModel.Adress);
+            clientsTableAdapter1.Delete(OldClientModel.id, OldClientModel.IsResident, OldClientModel.idType);
             updateView();
         }
 
@@ -224,6 +227,13 @@ namespace SmallBankApp
            
             else
                 deleteRow();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            FormsForm form = new FormsForm();
+            form.Show();
+            this.Close();
         }
     }
 }

@@ -48,7 +48,8 @@ namespace SmallBankApp
             this.dicTypeClientTableAdapter.Fill(this.smallBankDataSet.DicTypeClient);
             this.clientsTableAdapter1.Fill(this.smallBankDataSet.Clients);
             TypeComboBox.SelectedIndex = -1;
-            ClientModel.Reset();
+            if(!IsEdit)
+                ClientModel.Reset();
 
         }
         private bool IsIncorrectInputs()
@@ -66,8 +67,11 @@ namespace SmallBankApp
                 PatTextBox.Text = ClientModel.Patronymic;
                 INNTextBox.Text = ClientModel.INN;
                 AdressTextBox.Text = ClientModel.Adress;
-                
-                TypeComboBox.SelectedIndex = dicTypeClientTableAdapter.GetData().First(x => x.IdType == clientsTableAdapter1.GetData().First(t => t.Id == ClientModel.id).TypeClient).IdType;
+                //this.clientsTableAdapter1.Fill(this.smallBankDataSet.Clients);
+                //MessageBox.Show(ClientModel.id.ToString());
+                //MessageBox.Show(clientsTableAdapter1.GetData().First(t => t.Id == ClientModel.id).TypeClient.ToString());
+                TypeComboBox.SelectedIndex = TypeComboBox.FindString(dicTypeClientTableAdapter.GetData().First(x => x.IdType == clientsTableAdapter1.GetData().First(t => t.Id == ClientModel.id).TypeClient).Name);
+                ResidentCheckBox.Checked = clientsTableAdapter1.GetData().FirstOrDefault(t => t.Id == ClientModel.id).Resident;
             }
         }
 

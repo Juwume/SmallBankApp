@@ -64,6 +64,12 @@
     <Compile Include="AddDepForm.Designer.cs">
       <DependentUpon>AddDepForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreditsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditsForm.Designer.cs">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DCFizFaces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="DCUrFaces.Designer.cs">
       <DependentUpon>DCUrFaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepForm.Designer.cs">
+      <DependentUpon>DepForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DGVDataSourceChanger.cs" />
     <Compile Include="FizFaces.cs">
@@ -130,11 +142,17 @@
     <EmbeddedResource Include="AddDepForm.resx">
       <DependentUpon>AddDepForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreditsForm.resx">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DCFizFaces.resx">
       <DependentUpon>DCFizFaces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DCUrFaces.resx">
       <DependentUpon>DCUrFaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepForm.resx">
+      <DependentUpon>DepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FizFaces.resx">
       <DependentUpon>FizFaces.cs</DependentUpon>

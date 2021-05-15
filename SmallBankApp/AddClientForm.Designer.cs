@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.ResidentCheckBox = new System.Windows.Forms.CheckBox();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
+            this.dicTypeClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.smallBankDataSet = new SmallBankApp.SmallBankDataSet();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.AdressTextBox = new System.Windows.Forms.TextBox();
-            this.smallBankDataSet = new SmallBankApp.SmallBankDataSet();
-            this.dicTypeClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dicTypeClientTableAdapter = new SmallBankApp.SmallBankDataSetTableAdapters.DicTypeClientTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.SurnameLabel = new System.Windows.Forms.Label();
@@ -49,8 +49,8 @@
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.clientsTableAdapter1 = new SmallBankApp.SmallBankDataSetTableAdapters.ClientsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dicTypeClientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // ResidentCheckBox
@@ -75,6 +75,16 @@
             this.TypeComboBox.TabIndex = 1;
             this.TypeComboBox.ValueMember = "Name";
             // 
+            // dicTypeClientBindingSource
+            // 
+            this.dicTypeClientBindingSource.DataMember = "DicTypeClient";
+            this.dicTypeClientBindingSource.DataSource = this.smallBankDataSet;
+            // 
+            // smallBankDataSet
+            // 
+            this.smallBankDataSet.DataSetName = "SmallBankDataSet";
+            this.smallBankDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(412, 259);
@@ -88,16 +98,6 @@
             this.AdressTextBox.Name = "AdressTextBox";
             this.AdressTextBox.Size = new System.Drawing.Size(159, 20);
             this.AdressTextBox.TabIndex = 6;
-            // 
-            // smallBankDataSet
-            // 
-            this.smallBankDataSet.DataSetName = "SmallBankDataSet";
-            this.smallBankDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dicTypeClientBindingSource
-            // 
-            this.dicTypeClientBindingSource.DataMember = "DicTypeClient";
-            this.dicTypeClientBindingSource.DataSource = this.smallBankDataSet;
             // 
             // dicTypeClientTableAdapter
             // 
@@ -242,8 +242,8 @@
             this.Text = "AddClientForm";
             this.Activated += new System.EventHandler(this.AddClientForm_Activated);
             this.Load += new System.EventHandler(this.AddClientForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dicTypeClientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

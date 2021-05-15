@@ -68,6 +68,7 @@
             this.CredButton.TabIndex = 2;
             this.CredButton.Text = "Кредиты";
             this.CredButton.UseVisualStyleBackColor = true;
+            this.CredButton.Click += new System.EventHandler(this.CredButton_Click);
             // 
             // FizButton
             // 
@@ -110,6 +111,7 @@
             this.DepButton.TabIndex = 6;
             this.DepButton.Text = "Вклады";
             this.DepButton.UseVisualStyleBackColor = true;
+            this.DepButton.Click += new System.EventHandler(this.DepButton_Click);
             // 
             // BackButton
             // 

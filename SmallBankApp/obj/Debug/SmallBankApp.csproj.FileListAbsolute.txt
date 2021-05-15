@@ -18,3 +18,5 @@ C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.Add
 C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.DCUrFaces.resources
 C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.AddClientForm.resources
 C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.FizFaces.resources
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.CreditsForm.resources
+C:\Users\Maxim\source\repos\SmallBankApp\SmallBankApp\obj\Debug\SmallBankApp.DepForm.resources

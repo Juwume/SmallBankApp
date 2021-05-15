@@ -48,6 +48,8 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.clientsTableAdapter1 = new SmallBankApp.SmallBankDataSetTableAdapters.ClientsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.FizFacesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fizFacesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallBankDataSet)).BeginInit();
@@ -226,11 +228,27 @@
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
+            // ExitButton
+            // 
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExitButton.Location = new System.Drawing.Point(856, 57);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(91, 29);
+            this.ExitButton.TabIndex = 19;
+            this.ExitButton.Text = "Выйти";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // clientsTableAdapter1
+            // 
+            this.clientsTableAdapter1.ClearBeforeFill = true;
+            // 
             // FizFaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 450);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.EditButton);
@@ -274,5 +292,7 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button ExitButton;
+        private SmallBankDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter1;
     }
 }

@@ -32,6 +32,7 @@ namespace SmallBankApp
             // TODO: данная строка кода позволяет загрузить данные в таблицу "smallBankDataSet.DicTarifDep". При необходимости она может быть перемещена или удалена.
             this.dicTarifDepTableAdapter.Fill(this.smallBankDataSet.DicTarifDep);
             SurTextBox.Text = Surname;
+            TarifComboBox.SelectedIndex = -1;
         }
 
         private void OkButton_Click(object sender, EventArgs e)
