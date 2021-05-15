@@ -107,6 +107,12 @@
       <DependentUpon>DepForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DGVDataSourceChanger.cs" />
+    <Compile Include="ExReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExReportForm.Designer.cs">
+      <DependentUpon>ExReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FizFaces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,10 @@
     <EmbeddedResource Include="DepForm.resx">
       <DependentUpon>DepForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExReport.rdlc" />
+    <EmbeddedResource Include="ExReportForm.resx">
+      <DependentUpon>ExReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FizFaces.resx">
       <DependentUpon>FizFaces.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +207,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

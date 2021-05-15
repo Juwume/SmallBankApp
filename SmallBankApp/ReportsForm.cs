@@ -16,5 +16,13 @@ namespace SmallBankApp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ExReportForm form = new ExReportForm();
+            this.Hide();
+            form.ShowDialog(this);
+            this.Show();
+        }
     }
 }

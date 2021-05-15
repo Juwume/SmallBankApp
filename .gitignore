@@ -1,1 +1,6 @@
 .vs
+packages
+SmallBankApp/obj
+SmallBankApp/bin
+SmallBankApp/SqlServerTypes
+SmallBankApp/Properties
